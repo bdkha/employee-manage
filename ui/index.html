@@ -1,0 +1,337 @@
+<!DOCTYPE html>
+<html lang="vi">
+<head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+
+    <link rel="stylesheet" href="./assets/css/common/common.css" />
+    <link rel="stylesheet" href="./assets/css/view/employee/employee.css" />
+    <link rel="stylesheet" href="./assets/css/view/employee/employeeForm.css" />
+</head>
+
+<body>
+    <div class="left-menu">
+        <div class="top-left-menu">
+            <div class="menu-icon">
+                <img src="./assets/img/toggle.png" alt="">
+            </div>
+            <div class="logo">
+                <img src="http://store-images.s-microsoft.com/image/apps.56893.14604805685829554.4e62b585-ae24-44e7-9776-54040a124969.f502ca86-b7ec-4063-9632-dc3e150893b4"
+                    alt="" />
+            </div>
+        </div>
+
+        <div class="menu-item">
+            <div class="menu-item-icon">
+                <img src="./assets/icon/dashboard.png" />
+            </div>
+            <div class="menu-item-text">Tổng quan</div>
+        </div>
+        <div class="menu-item">
+            <div class="menu-item-icon">
+                <img src="./assets/icon/report.png" />
+            </div>
+            <div class="menu-item-text">Báo cáo</div>
+        </div>
+        <div class="menu-item">
+            <div class="menu-item-icon">
+                <img src="./assets/icon/dashboard.png" alt="" />
+            </div>
+            <div class="menu-item-text">Mua hàng</div>
+        </div>
+        <div class="menu-item">
+            <div class="menu-item-icon">
+                <img src="./assets/icon/dic-employee.png" alt="" />
+            </div>
+            <div class="menu-item-text">Danh mục nhân viên</div>
+        </div>
+        <div class="menu-item">
+            <div class="menu-item-icon">
+                <img src="./assets/icon/dic-employee.png" alt="">
+            </div>
+            <div class="menu-item-text">Danh mục nhân viên</div>
+        </div>
+        <div class="menu-item">
+            <div class="menu-item-icon">
+                <img src="./assets/icon/setting.png" alt="">
+            </div>
+            <div class="menu-item-text">Thiết lập hệ thống</div>
+        </div>
+    </div>
+
+    <div class="page">
+        <div class="header">
+            <div class="header-left">
+
+                <div class="header-filter">
+                    <div class="header-combo-box">
+                        Nhà hàng Biển Đông
+                        <img src="./assets/icon/chevron-down-solid.svg" alt="" />
+                    </div>
+                </div>
+            </div>
+            <div class="header-right">
+
+                <div class="notification">
+                    <img src="./assets/icon/option.png" alt="">
+                </div>
+                <div class="user-name">Bùi Đình Khá</div>
+                <div class="avatar">
+                    <img src="./assets/icon/avatar-default.png" alt="" />
+                </div>
+
+            </div>
+        </div>
+        <div class="content">
+            <div class="action-bar">
+                <div class="left-action">
+                    <div class="title-page">Danh sách nhân viên</div>
+                    <div class="filter-employee" id="filterEmployee">
+                        <div class="search-bar">
+                            <input type="text" placeholder="Tìm kiếm theo Mã, Tên hoặc Số điện thoại" id="text-filter"
+                                tabindex="1" />
+                            <img src="./assets/icon/search.png" alt="">
+                        </div>
+                        <div class="combo-box-room">
+                            <select id="department-select" tabindex="2">
+                                <option>Tất cả phòng ban</option>
+                            </select>
+                        </div>
+                        <div class="combo-box-vi-tri">
+                            <select id="position-select" tabindex="3">
+                                <option>Tất cả vị trí</option>
+                            </select>
+                        </div>
+                    </div>
+                </div>
+                <div class="right-action" id="toolBarEmployee">
+                    <div class=" btn btn-more-3-w green-but button-item" CommandType="add" tabindex="4">
+                        <img src="./assets/icon/add.png" alt="">
+                        Thêm nhân viên
+                    </div>
+
+                    <div class="action-crud">
+                        <div class="action-button button-item" CommandType="refresh" tabindex="5">
+                            <img src="./assets/icon/refresh.png" alt="">
+                        </div>
+                        <div class="action-button button-item" CommandType="duplicate" tabindex="6">
+                            <img src="./assets/icon/duplicate.png" alt="">
+                        </div>
+                        <div class="action-button button-item" CommandType="delete" tabindex="7">
+                            <img src="./assets/icon/delete.png" alt="">
+                        </div>
+
+                    </div>
+                </div>
+            </div>
+
+            <div class="table-employee" id="grid-employee" url="http://localhost:59811/api/v1/Employees"
+                ToolBar="toolBarEmployee" PageNavigator="pageNavigation" Filter="filterEmployee">
+                <div class="table-frame">
+                    <div class="col" FieldName="employeeCode">Mã nhân viên</div>
+                    <div class="col" FieldName="employeeName">Tên nhân viên</div>
+                    <div class="col" FieldName="gender">Giới tính</div>
+                    <div class="col" FieldName="dateOfBirth" DataType="Date">
+                        Ngày sinh
+                    </div>
+                    <div class="col" FieldName="phoneNumber">Điện thoại</div>
+                    <div class="col" FieldName="email">Email</div>
+                    <div class="col" FieldName="positionName">Chức vụ</div>
+                    <div class="col" FieldName="departmentName">Phòng ban</div>
+                    <div class="col" FieldName="salary" DataType="Currency">
+                        Mức lương cơ bản
+                    </div>
+                    <div class="col" FieldName="workStatus">Tình trạng công việc</div>
+                </div>
+            </div>
+            <div class="page-navigation" id="pageNavigation">
+                <div class="numbers-of-employee" id="numbers-of-employee"></div>
+                <ul>
+                    <li class="square ">
+
+                        <img src="./assets/icon/btn-firstpage.svg" alt="">
+
+                    </li>
+                    <li class="square">
+
+                        <img src="./assets/icon/btn-prev-page.svg" alt="">
+
+                    </li>
+                    <li class="circle center">1</li>
+                    <li class="circle center">2</li>
+                    <li class="circle center">3</li>
+                    <li class="circle center">4</li>
+                    <li class="square">
+
+                        <img src="./assets/icon/btn-next-page.svg" alt="">
+                    </li>
+                    <li class="square">
+
+                        <img src="./assets/icon/btn-lastpage.svg" alt="">
+                    </li>
+                </ul>
+                <select name="page-size" id="page-size">
+                    <option value="20">20 nhân viên/trang</option>
+                    <option value="30">30 nhân viên/trang</option>
+                    <option value="40">40 nhân viên/trang</option>
+                    <option value="50">50 nhân viên/trang</option>
+                    <option value="100">100 nhân viên/trang</option>
+                </select>
+            </div>
+        </div>
+    </div>
+    <div class="form-pop-up" id="form-add-employee">
+        <div id="close-icon" class="command-but"><img src="./assets/icon/x.svg" alt="" CommandType="close"></div>
+        <div class="form-title">THÔNG TIN NHÂN VIÊN</div>
+        <div class="form-body">
+            <div class="avatar-wrapper">
+                <img class="profile-pic" src="./assets/img/default-avatar.jpg" />
+                <div class="upload-button">
+                    <input type="file" class="file-upload" accept="image/*" />
+                </div>
+            </div>
+            <div class="infor-input">
+                <div class="part">
+                    <span>A. THÔNG TIN CHUNG</span>
+                    <div class="row-infor">
+                        <div class="input">
+                            <label for="employee-code">Mã nhân viên (<span class="red-text">*</span>)</label>
+                            <input type="text" id="employee-code" class="validate-input" autofocus required
+                                FieldName="employeeCode" tabindex="15" />
+                        </div>
+                        <div class="input">
+                            <label for="employee-name">Họ và tên (<span class="red-text">*</span>)</label>
+                            <input type="text" id="employee-name" class="validate-input" required
+                                FieldName="employeeName" tabindex="16" />
+                        </div>
+
+                    </div>
+                    <div class="row-infor">
+                        <div class="input">
+                            <label for="date-of-birth">Ngày sinh</label>
+                            <input type="date" id="date-of-birth" class="validate-input" FieldName="dateOfBirth"
+                                DataType="Date" tabindex="17" />
+                        </div>
+                        <div class="input">
+                            <label for="gender">Giới tính</label>
+                            <select type="text" id="gender" class="validate-input" FieldName="gender" DataType="Enum"
+                                tabindex="18"></select>
+                        </div>
+                    </div>
+                    <div class="row-infor">
+                        <div class="input">
+                            <label for="personal-id">Số CMTND/ CCCD (<span class="red-text">*</span>)</label>
+                            <input type="text" id="indentity-number" class="validate-input" required
+                                class="validate-input" Fieldname="indentityNumber" DataType="Number" tabindex="19" />
+                        </div>
+                        <div class="input">
+                            <label for="date-range">Ngày cấp</label>
+                            <input type="date" id="indentity-date" class="validate-input" FieldName="indentityDate"
+                                DataType="Date" tabindex="20" />
+                        </div>
+                    </div>
+                    <div class="row-infor">
+                        <div class="input">
+                            <label for="place-range">Nơi cấp</label>
+                            <input type="text" id="place-range" class="validate-input" FieldName="indentityPlace"
+                                tabindex="21" />
+                        </div>
+                    </div>
+                    <div class="row-infor">
+                        <div class="input">
+                            <label for="email">Email (<span class="red-text">*</span>)</label>
+                            <input type="email" id="email" class="validate-input" required FieldName="email"
+                                tabindex="22" />
+                        </div>
+                        <div class="input">
+                            <label for="phone">Số điện thoại (<span class="red-text">*</span>)</label>
+                            <input type="tel" id="phone" class="validate-input" required Fieldname="phoneNumber"
+                                tabindex="23" />
+                        </div>
+                    </div>
+                </div>
+                <div class="part">
+                    <span>B. THÔNG TIN CÔNG VIỆC</span>
+                    <div class="row-infor">
+                        <div class="input">
+                            <label for="position">Vị trí</label>
+                            <select type="text" id="position" class="validate-input" FieldName="positionID"
+                                DataType="Enum" tabindex="24"></select>
+                        </div>
+                        <div class="input">
+                            <label for="department">Phòng ban</label>
+                            <select type="text" id="department" class="validate-input" FieldName="departmentID"
+                                DataType="Enum" tabindex="25"></select>
+                        </div>
+                    </div>
+                    <div class="row-infor">
+                        <div class="input">
+                            <label for="tax-id">Mã số thuế cá nhân</label>
+                            <input type="text" id="tax-code" class="validate-input" FieldName="taxCode" tabindex="26" />
+                        </div>
+                        <div class="input">
+                            <label for="salary">Mức lương cơ bản</label>
+                            <input type="text" id="salary" class="validate-input" Fieldname="salary" Datatype="Currency"
+                                tabindex="27" />
+                        </div>
+                    </div>
+                    <div class="row-infor">
+                        <div class="input">
+                            <label for="date-join-company">Ngày gia nhập công ty</label>
+                            <input type="date" id="joining-date" class="validate-input" FieldName="joiningDate"
+                                DataType="Date" tabindex="28" />
+                        </div>
+                        <div class="input">
+                            <label for="work-status">Tình trạng công việc</label>
+                            <select type="text" id="work-status" class="validate-input" FieldName="workStatus"
+                                tabindex="29"></select>
+                        </div>
+                    </div>
+                    <div class="hidden">
+                        <input type="text" id="employee-id" FieldName="employeeID" />
+                        <input type="text" FieldName="indentityPlace" />
+                        <input type="text" FieldName="modifiedBy" />
+                        <input type="date" FieldName="modifiedDate" DataType="Date" />
+                        <input type="text" FieldName="createdBy" />
+                        <input type="date" FieldName="createdDate" DataType="Date" />
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="form-footer">
+            <div class="button-save command-but">
+                <button class="btn btn-2-w green-but" CommandType="save" tabindex="30">Lưu</button>
+            </div>
+            <div class="button-cancle command-but">
+                <button class="btn btn-2-w" style="color: #222" CommandType="close" tabindex="31">Hủy</button>
+            </div>
+        </div>
+    </div>
+    <div id="delete-popup">
+        <div id="close-icon" class="command-but"><img src="./assets/icon/x.svg" alt="" CommandType="close"></div>
+        <div class="delete-title">Xóa nhân viên</div>
+        <div class="delete-content">
+            <div class="delete-text"></div>
+            <div class="delete-icon">
+                <img src="./assets/icon/warning.png" alt="" />
+
+            </div>
+        </div>
+        <div class="delete-button">
+            <button class="btn btn-2-w red-but" CommandType="delete">Xóa</button>
+            <button class="btn btn-2-w" CommandType="close">Hủy</button>
+        </div>
+    </div>
+
+    <div class="overplay"></div>
+
+    <script src="https://code.jquery.com/jquery-3.6.0.min.js"
+        integrity="sha256-/xUj+3OJU5yExlq6GSYGSHk7tPXikynS7ogEvDej/m4=" crossorigin="anonymous"></script>
+    <script src="./scripts/common/common.js"></script>
+    <script src="./scripts/common/resource.js"></script>
+    <script src="./scripts/view/employee/employeeForm.js"></script>
+    <script src="./scripts/view/employee/popup.js"></script>
+    <script src="./scripts/view/employee/employee.js"></script>
+
+</body>
+</html>

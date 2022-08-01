@@ -1,0 +1,203 @@
+.form-pop-up {
+    position: fixed;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    background-color: #fff;
+    border-radius: 5px;
+    z-index: 2;
+    width: fit-content;
+    height: fit-content;
+    display: none;
+}
+
+.form-title {
+    height: 20px;
+    line-height: 20px;
+    font-size: 20px;
+    margin-left: 20px;
+    margin-top: 10px;
+}
+
+.form-body {
+    display: flex;
+    flex-direction: row;
+    padding-left: 10px;
+    padding-right: 20px;
+}
+
+.part {
+    margin-top: 20px;
+}
+
+.part>span {
+    margin-left: 30px;
+}
+
+.avatar-wrapper {
+    position: relative;
+    height: 120px;
+    width: 120px;
+    margin-left: 10px;
+    border-radius: 50%;
+    overflow: hidden;
+    border: 1px solid #bbb;
+    transition: all 0.3s ease;
+    margin-top: 20px;
+}
+
+.avatar-wrapper:hover {
+    transform: scale(1.05);
+    cursor: pointer;
+}
+
+.avatar-wrapper:hover .profile-pic {
+    opacity: 0.5;
+}
+
+.avatar-wrapper .profile-pic {
+    height: 100%;
+    width: 100%;
+    transition: all 0.3s ease;
+}
+
+.avatar-wrapper .profile-pic:after {
+    font-family: FontAwesome;
+    content: "\f007";
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    position: absolute;
+    font-size: 120px;
+    background: #ecf0f1;
+    color: #34495e;
+    text-align: center;
+}
+
+.avatar-wrapper .upload-button {
+    position: absolute;
+    top: 0;
+    left: 0;
+    height: 100%;
+    width: 100%;
+}
+
+.avatar-wrapper .upload-button .fa-arrow-circle-up {
+    position: absolute;
+    font-size: 120px;
+    top: 0px;
+    left: 0;
+    text-align: center;
+    opacity: 0;
+    transition: all 0.3s ease;
+    color: #34495e;
+}
+
+.avatar-wrapper .upload-button:hover .fa-arrow-circle-up {
+    opacity: 0.9;
+}
+
+.file-upload {
+    display: none;
+    position: absolute;
+    top: 200%;
+}
+
+.infor-input {
+    margin-left: 20px;
+}
+
+.row-infor {
+    display: flex;
+    flex-direction: row;
+    height: fit-content;
+    width: 100%;
+
+}
+
+.input {
+    width: 230px;
+    display: flex;
+    flex-direction: column;
+    margin-left: 30px;
+    margin-top: 10px;
+}
+
+.input>label {
+    font-size: 11px;
+    color: #000;
+
+}
+
+.input>input,
+select {
+    margin-top: 5px;
+    height: 36px;
+    border-radius: 5px;
+    outline: none;
+    padding-left: 10px;
+    color: #000;
+}
+
+.form-footer {
+    display: flex;
+    flex-direction: row-reverse;
+    background-color: #ddd;
+    padding: 10px;
+    margin-top: 10px;
+    border-bottom-right-radius: 5px;
+    border-bottom-left-radius: 5px;
+}
+
+.button-save {
+    margin-right: 10px;
+}
+
+.button-cancle {
+    margin-right: 20px;
+}
+
+.overplay {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-color: rgba(0, 0, 0, 0.5);
+    z-index: 1;
+    display: none;
+}
+
+#close-icon {
+    position: absolute;
+    top: 10px;
+    right: 20px;
+    font-size: 20px;
+    color: #b0b0b0;
+    cursor: pointer;
+}
+
+.command-but {
+    background-color: rgba(0, 0, 0, 0.0);
+}
+
+.validate-input {
+    border: 1px solid #aaa;
+}
+
+input.validate-input:focus {
+    border: 2px solid #999;
+}
+
+select.validate-input:focus {
+    border: 2px solid #999;
+}
+
+.require-control {
+    border: 1px solid red;
+}
+
+input.require-control:focus {
+    border: 2px solid red;
+}
