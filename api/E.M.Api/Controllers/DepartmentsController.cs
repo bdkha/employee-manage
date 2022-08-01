@@ -24,7 +24,7 @@ namespace Co.Cukcuk.Api.Controllers
         {
             try
             {
-                string connectString = "Host=3.0.89.182;Port=3306;Database=WDT.2022.BDKHA;Uid=dev;Pwd=12345678;";
+                string connectString = "//search connect string to your database";
                 var mySqlConnection = new MySqlConnection(connectString);
 
                 string getAllDepartmentCommand = "SELECT * FROM department;";

@@ -25,7 +25,7 @@ namespace Co.Cukcuk.Api.Controllers
             try
             {
 
-                string connectString = "Host=3.0.89.182;Port=3306;Database=WDT.2022.BDKHA;Uid=dev;Pwd=12345678;AllowUserVariables=True;";
+                string connectString = "//search connect string to your database ;";
                 var mySqlConnection = new MySqlConnection(connectString);
 
                 string insertCommand = "INSERT INTO employee (EmployeeID, EmployeeCode, EmployeeName, DateOfBirth, " +
@@ -100,7 +100,7 @@ namespace Co.Cukcuk.Api.Controllers
         {
             try
             {
-                string connectionString = "Host=3.0.89.182;Port=3306;Database=WDT.2022.BDKHA;Uid=dev;Pwd=12345678;AllowUserVariables=True;";
+                string connectionString = "//search connect string to your database ;";
                 var mySqlConnection = new MySqlConnection(connectionString);
                 string updateCommand = "UPDATE employee " +
                     "SET EmployeeCode = @EmployeeCode, " +
@@ -185,7 +185,7 @@ namespace Co.Cukcuk.Api.Controllers
             try
 
             {
-                string connectString = "Host=3.0.89.182;Port=3306;Database=WDT.2022.BDKHA;Uid=dev;Pwd=12345678;AllowUserVariables=True;";
+                string connectString = "//search connect string to your database ;";
                 var mySqlConnection = new MySqlConnection(connectString);
                 string deleteCommand = "DELETE FROM employee WHERE employeeID = @EmployeeID";
                 var parameters = new DynamicParameters();
@@ -242,7 +242,7 @@ namespace Co.Cukcuk.Api.Controllers
             try
             {
                 // Khởi tạo kết nối tới DB MySQL
-                string connectionString = "Host=3.0.89.182;Port=3306;Database=WDT.2022.BDKHA;Uid=dev;Pwd=12345678;AllowUserVariables=True;";
+                string connectionString = "//search connect string to your database ;";
                 var mySqlConnection = new MySqlConnection(connectionString);
 
                 // Chuẩn bị tên Stored procedure
@@ -327,7 +327,7 @@ namespace Co.Cukcuk.Api.Controllers
             try
 
             {
-                string connectionString = "Host=3.0.89.182;Port=3306;Database=WDT.2022.BDKHA;Uid=dev;Pwd=12345678;AllowUserVariables=True;";
+                string connectionString = "//search connect string to your database ;";
                 var mySqlConnection = new MySqlConnection(connectionString);
 
                 string storedProcedureName = "Proc_Employee_GetByEmployeeCode";
@@ -362,7 +362,7 @@ namespace Co.Cukcuk.Api.Controllers
         [SwaggerResponse(StatusCodes.Status500InternalServerError)]
         public IActionResult GetNewEmployeeCode()
         {
-            string connectionString = "Host=3.0.89.182;Port=3306;Database=WDT.2022.BDKHA;Uid=dev;Pwd=12345678;AllowUserVariables=True;";
+            string connectionString = "//search connect string to your database ;";
             var mySqlConnection = new MySqlConnection(connectionString);
 
             string storedProcedureName = "Proc_Employee_GetMaxCode";
